@@ -17,7 +17,7 @@ class Station
   validates_presence_of :location
   validates_uniqueness_of :location
   
-  def self.load_GTFS_stops(file_path = Rails.root.join("spec", "models", "stops_test.txt"))
+  def self.load_GTFS_stops(file_path)
     stops = CSV.foreach(file_path, {headers: true}) do |row|
       Station.create!(
         station_id: row['stop_id'],

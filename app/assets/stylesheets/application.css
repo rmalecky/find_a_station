@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+
+body {
+  font-family: sans-serif;
+}
+
+div {
+  font-family: sans-serif;
+}

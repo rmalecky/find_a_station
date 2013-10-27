@@ -3,7 +3,7 @@ ruby '1.9.3'
 gem 'rails', '3.2.14'
 
 gem 'mongoid'
-
+gem 'newrelic_rpm'
 
 
 group :assets do

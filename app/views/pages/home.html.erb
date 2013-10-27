@@ -13,6 +13,9 @@ function findNearestStation() {
       success: function(resp){ 
         $('#resp').html(resp);
         }
+      error: function(){
+        alert("server error")
+      }
     });
   }
   function error() {

@@ -28,7 +28,10 @@ class Station
   end
   
   def self.nearest(location)
-    Station.geo_near([location[1],location[0]]).first
+    Station.geo_near([location[1].to_f,location[0].to_f])
+            .spherical
+            .distance_multiplier(3959)#radius of earth in miles
+            .first
   end
   
 end

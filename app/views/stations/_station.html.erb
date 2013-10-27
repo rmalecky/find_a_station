@@ -1,0 +1,5 @@
+<p>Closest Station: <strong><%= @station.name %></strong></p>
+<p>Distance: <strong><%=@station.geo_near_distance.round(4)%> miles</strong></p>
+<!--
+  showing 4 digits so the number jumps around on refresh
+-->

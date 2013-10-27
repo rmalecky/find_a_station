@@ -1,2 +1,30 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<button id="station" onclick=findNearestStation()>Nearest Path Station</button>
+<div id='resp'><div>
+
+<script>
+function findNearestStation() {
+  function success(position) {
+    $.ajax({
+      url: '/station',
+      data: {
+        latitude: position.coords.latitude, 
+        longitude: position.coords.longitude
+        },
+      success: function(resp){ 
+        $('#resp').html(resp);
+        }
+    });
+  }
+  function error() {
+    alert("Your location couldn't be determined");
+  }
+  
+  if (!navigator.geolocation) {
+    alert("Your browser doesn't support geolocation");
+  }else{
+    navigator.geolocation.getCurrentPosition(success, error);
+  }
+  
+}
+
+</script>
